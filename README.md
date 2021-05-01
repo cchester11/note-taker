@@ -52,9 +52,9 @@ The application should have a `db.json` file on the back end that will be used t
 
 The following HTML routes should be created:
 
-* `GET /notes` should return the `notes.html` file.
+* `GET /notes` should return the `notes.html` file.  (check)
 
-* `GET *` should return the `index.html` file.
+* `GET *` should return the `index.html` file. (check)
 
 The following API routes should be created:
 
