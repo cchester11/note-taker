@@ -11,7 +11,7 @@ router.get('/notes', (req, res) => {
     if(err) throw err
     res.json(JSON.parse(data))
   })
-})
+});
 
 //post request done.
 //post the new note to JSON by using the req.body in a createNewNote function and post the new note as a response
@@ -26,6 +26,14 @@ router.post('/notes', function (req, res) {
   res.json(req.body)
   createNewNote(db)
 
+});
+
+router.delete('/notes/:id', (req, res) => {
+  const results = db.filter(note => note.id !== req.params.id)
+
+  createNewNote(results);
+
+  res.json(results);
 })
 
 module.exports = router;
