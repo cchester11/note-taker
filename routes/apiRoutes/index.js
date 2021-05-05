@@ -4,8 +4,8 @@ const fs = require('fs');
 const path = require('path');
 const createNewNote = require("../../lib/notes");
 
-//get request done.
-//need to create a lib folder for the functions used in this get route
+// get request done.
+// need to create a lib folder for the functions used in this get route
 router.get('/notes', (req, res) => {
   fs.readFile(path.join(__dirname, '../../db/db.json'), 'utf8', (err, data) => {
     if(err) throw err
@@ -13,8 +13,8 @@ router.get('/notes', (req, res) => {
   })
 });
 
-//post request done.
-//post the new note to JSON by using the req.body in a createNewNote function and post the new note as a response
+// post request done.
+// post the new note to JSON by using the req.body in a createNewNote function and post the new note as a response
 router.post('/notes', function (req, res) {
   // console.log(notesDb)
   if (db.length == 0) {
@@ -34,6 +34,6 @@ router.delete('/notes/:id', (req, res) => {
   createNewNote(results);
 
   res.json(results);
-})
+});
 
 module.exports = router;
